@@ -17,7 +17,7 @@ public class ItemInit {
         }};
     public static final DeferredRegister<net.minecraft.world.item.Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    public static final RegistryObject<net.minecraft.world.item.Item> DragonHeart = ITEMS.register("finalcore", () -> new Item(new Item.Properties().tab(finalswordTab).stacksTo(1).fireResistant()));
+
     public static final RegistryObject<net.minecraft.world.item.Item> FinalSwordR1 = finalSwordRegister("finalsword_mk1", power(8), "§eRank: " + "I");
     public static final RegistryObject<net.minecraft.world.item.Item> FinalSwordR2 = finalSwordRegister("finalsword_mk2", power(10), "§eRank: " + "II");
     public static final RegistryObject<net.minecraft.world.item.Item> FinalSwordR3 = finalSwordRegister("finalsword_mk3", power(15), "§eRank: " + "III");
@@ -28,6 +28,8 @@ public class ItemInit {
     public static final RegistryObject<net.minecraft.world.item.Item> FinalSwordR8 = finalSwordRegister("finalsword_mk8", power(127), "§eRank: " + "VIII");
     public static final RegistryObject<net.minecraft.world.item.Item> FinalSwordR9 = finalSwordRegister("finalsword_mk9", power(511), "§eRank: " + "IX");
     public static final RegistryObject<net.minecraft.world.item.Item> FinalSwordRfinal = finalSwordRegister("finalsword_final", Double.MAX_VALUE, "§eRank: " + "§lFinal");
+    public static final RegistryObject<net.minecraft.world.item.Item> DragonHeart = ITEMS.register("finalcore", () -> new Item(new Item.Properties().tab(finalswordTab).stacksTo(1).fireResistant()));
+
 
     private static RegistryObject<net.minecraft.world.item.Item> finalSwordRegister(String ID, double damage, String loreText) {
         return ITEMS.register(ID, () -> new finalSwordItem(damage, loreText));
