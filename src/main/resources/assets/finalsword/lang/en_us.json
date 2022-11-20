@@ -1,0 +1,18 @@
+{
+  "entity.finalsword.bullet": "",
+
+  "item.finalsword.finalsword_mk1": "§dFinal Sword",
+  "item.finalsword.finalsword_mk2": "§dFinal Sword",
+  "item.finalsword.finalsword_mk3": "§dFinal Sword",
+  "item.finalsword.finalsword_mk4": "§dFinal Sword",
+  "item.finalsword.finalsword_mk5": "§dFinal Sword",
+  "item.finalsword.finalsword_mk6": "§dFinal Sword",
+  "item.finalsword.finalsword_mk7": "§dFinal Sword",
+  "item.finalsword.finalsword_mk8": "§dFinal Sword",
+  "item.finalsword.finalsword_mk9": "§dFinal Sword",
+  "item.finalsword.finalsword_final": "§eReal Final Sword",
+  
+  "item.finalsword.finalcore": "Final Core",
+  
+  "itemGroup.tabfinal_sword_tab": "Final Sword"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "finalsword:items/dragon_sword_mk6"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "entity.finalsword.bullet": "",
+
+  "item.finalsword.finalsword_mk1": "§d最终之剑",
+  "item.finalsword.finalsword_mk2": "§d最终之剑",
+  "item.finalsword.finalsword_mk3": "§d最终之剑",
+  "item.finalsword.finalsword_mk4": "§d最终之剑",
+  "item.finalsword.finalsword_mk5": "§d最终之剑",
+  "item.finalsword.finalsword_mk6": "§d最终之剑",
+  "item.finalsword.finalsword_mk7": "§d最终之剑",
+  "item.finalsword.finalsword_mk8": "§d最终之剑",
+  "item.finalsword.finalsword_mk9": "§d最终之剑",
+  "item.finalsword.finalsword_final": "§e真。最终之剑",
+  
+  "item.finalsword.finalcore": "§e最终核心",
+  
+  "itemGroup.tabfinal_sword_tab": "最终之剑"
+}
