@@ -1,4 +1,4 @@
-package net.sqm;
+package net.sqm.inits;
 
 
 import net.minecraftforge.registries.RegistryObject;
@@ -12,6 +12,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
+import net.sqm.entitys.finalSwordDiamondEntity;
 
 import static net.sqm.finalsword.MODID;
 

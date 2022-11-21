@@ -1,10 +1,31 @@
+buildscript {
+    repositories {
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7.+'
+    }
+}
+// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+}
+
 plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
+
 
 group = 'net.sqm'
-version = '2.0-Alpha'
+version = '2.0.02-Alpha'
 
 java {
     archivesBaseName = 'finalsword'
@@ -142,6 +163,7 @@ dependencies {
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
@@ -157,6 +179,15 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
+}
+
+mixin {
+    add sourceSets.main, 'mixins.sqm.refmap.json'
+    config 'mixins.sqm.json'
+    debug.verbose = true
+    debug.export = true
+    dumpTargetOnFailure = true
+    quiet
 }
 
 jar.finalizedBy('reobfJar')

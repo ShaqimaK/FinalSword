@@ -65,9 +65,3 @@ versionRange = "[1.19.0,1.20)"
 ordering = "NONE"
 side = "BOTH"
 
-
-[[dependencies.finalsword]]
-modId = "attributefix"
-mandatory = true
-versionRange = "[1.19.0,)"
-side = "BOTH"

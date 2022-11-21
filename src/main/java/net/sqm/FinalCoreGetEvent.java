@@ -1,6 +1,5 @@
 package net.sqm;
 
-import net.minecraft.world.item.Item;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,6 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.advancements.Advancement;
+import net.sqm.inits.ItemInit;
 
 
 import javax.annotation.Nullable;

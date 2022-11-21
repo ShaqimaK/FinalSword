@@ -1,8 +1,7 @@
-package net.sqm;
+package net.sqm.items;
 
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +26,8 @@ import java.util.List;
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
+import net.sqm.entitys.finalSwordDiamondEntity;
+import net.sqm.inits.ItemInit;
 
 
 public class finalSwordItem extends net.minecraft.world.item.Item {
@@ -60,7 +61,8 @@ public class finalSwordItem extends net.minecraft.world.item.Item {
     @Override
     @OnlyIn(Dist.CLIENT)
     public boolean isFoil(ItemStack itemstack) {
-        return Minecraft.getInstance().player.isShiftKeyDown();
+        Player player = Minecraft.getInstance().player;
+        return player.isShiftKeyDown() && (player.getMainHandItem() == itemstack || player.getOffhandItem() == itemstack);
     }
 
     @Override

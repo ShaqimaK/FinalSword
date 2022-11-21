@@ -1,12 +1,10 @@
-package net.sqm;
+package net.sqm.entitys;
 
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -24,9 +22,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.sqm.inits.EntityInit;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -67,11 +64,7 @@ public class finalSwordDiamondEntity extends AbstractArrow implements ItemSuppli
         return ItemStack.EMPTY;
     }
 
-    @Override
-    protected void doPostHurtEffects(LivingEntity entity) {
-        super.doPostHurtEffects(entity);
-        entity.setArrowCount(entity.getArrowCount() - 1);
-    }
+
 
     @Override
     public void playerTouch(Player entity) {
@@ -79,6 +72,7 @@ public class finalSwordDiamondEntity extends AbstractArrow implements ItemSuppli
         if (entity != this.getOwner()) {
             hitEffect();
             hitDamage();
+            //this.discard();
         }
 
     }
@@ -89,6 +83,7 @@ public class finalSwordDiamondEntity extends AbstractArrow implements ItemSuppli
         if (entityHitResult.getEntity() != this.getOwner()) {
             hitEffect();
             hitDamage();
+            //this.discard();
         }
 
     }
@@ -98,6 +93,7 @@ public class finalSwordDiamondEntity extends AbstractArrow implements ItemSuppli
         super.onHitBlock(blockHitResult);
         hitEffect();
         hitDamage();
+        this.discard();
     }
 
     private void hitEffect() {

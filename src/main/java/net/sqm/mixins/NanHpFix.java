@@ -1,4 +1,4 @@
-package net.sqm;
+package net.sqm.mixins;
 
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.world.entity.Entity;
@@ -32,25 +32,25 @@ public abstract class NanHpFix extends Entity {
 
     @Inject(method = "isAlive", at = @At("HEAD"), cancellable = true)
     public void isAlive(CallbackInfoReturnable<Boolean> cir) {
-        if (Float.isNaN(getHealth()))
+        if (Double.isNaN(getHealth()))
             cir.setReturnValue(false);
     }
 
     @Inject(method = "isDeadOrDying", at = @At("HEAD"), cancellable = true)
     public void isDeadOrDying(CallbackInfoReturnable<Boolean> cir) {
-        if (Float.isNaN(getHealth()))
+        if (Double.isNaN(getHealth()))
             cir.setReturnValue(true);
     }
 
     @Inject(method = "getHealth", at = @At("HEAD"), cancellable = true)
     public void GetHealth(CallbackInfoReturnable<Float> cir) {
-        if (Float.isNaN(entityData.get(DATA_HEALTH_ID)))
+        if (Double.isNaN(entityData.get(DATA_HEALTH_ID)))
             cir.setReturnValue(0.0F);
     }
 
     @Inject(method = "tick", at = @At("RETURN"))
     public void tick(CallbackInfo ci) {
-        if (Float.isNaN(getHealth()))
+        if (Double.isNaN(getHealth()))
             setHealth(0.0F);
     }
 }
